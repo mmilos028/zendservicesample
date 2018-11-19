@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php"
+     backupGlobals="false"
+     backupStaticAttributes="false"
+     colors="true"
+     convertErrorsToExceptions="true"
+     convertNoticesToExceptions="true"
+     convertWarningsToExceptions="true"
+     processIsolation="false"
+     stopOnFailure="false"
+    >
+
+    <php>
+        <!-- define some constants to use in our test classes -->
+        <const name="PHPUNIT_TESTSUITE_EXTENSION_SELENIUM_HOST" value="127.0.0.1"/>
+        <const name="PHPUNIT_TESTSUITE_EXTENSION_SELENIUM_BASEURL" value="http://192.168.3.63/onlinecasinoservice_malta"/>
+        <const name="PHPUNIT_TESTSUITE_EXTENSION_SELENIUM_BROWSER" value="*chrome"/>
+        <const name="PHPUNIT_TESTSUITE_EXTENSION_SELENIUM2_BROWSER" value="chrome"/>
+    </php>
+
+    <testsuites>
+        <testsuite name="Tests">
+            <!--
+            <directory>tests/</directory>
+            -->
+
+            <!--
+            <file>./tests_rest_web_services/BasicWebSiteTest.php</file>
+            -->
+
+
+            <file>./tests_web_site/AnonymousVisitWebSiteTest.php</file>
+            <file>./tests_web_site/AnonymousWebSiteTest.php</file>
+            <file>./tests_web_site/PlayerVisitWebSiteTest.php</file>
+            <!--
+            <file>./tests_web_site/RegisterPlayerOnWebSiteTest.php</file>
+            -->
+
+        </testsuite>
+    </testsuites>
+
+    <php>
+        <env name="WEB_SERVICE_URL" value="http://192.168.3.63/onlinecasinoservice_malta" />
+        <!--
+        <env name="WEB_SITE_URL" value="http://www.casino400.com/multiwintest" />
+        -->
+        <env name="WEB_SITE_URL" value="http://www.casino400.com/mwin24" />
+        <!--
+        <env name="BACKOFFICE_URL" value="http://www.casino400.com/frontend" />
+        -->
+
+        <env name="SITE_NAME" value="Casino400" />
+        <env name="WEB_SITE_IP_ADDRESS" value="212.200.99.50" />
+
+        <env name="WHITE_LABEL_USERNAME" value="Casino400"/>
+        <env name="AFFILIATE_USERNAME" value="Casino400.com"/>
+
+        <env name="CURRENCY" value="EUR"/>
+
+        <env name="PLAYER_USERNAME" value="milosm31"/>
+        <env name="PLAYER_PASSWORD" value="milosm31"/>
+
+        <env name="START_DATE" value="01-Jan-2018"/>
+        <env name="END_DATE" value="31-Dec-2019"/>
+
+        <env name="REPORT_WAIT_SECONDS" value="5"/>
+
+        <env name="REPORT_LARGE_DELAY" value="5"/>
+
+    </php>
+
+</phpunit>
